@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "TpCofreB": {
+    "ProjectoFinalJC": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/tp-cofre-b",
+            "outputPath": "dist/projecto-final-jc",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -25,10 +25,13 @@
               "src/assets"
             ],
             "styles": [
+              "src/styles.css",
               "@angular/material/prebuilt-themes/deeppurple-amber.css",
-              "src/styles.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -61,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "TpCofreB:build:production"
+              "browserTarget": "ProjectoFinalJC:build:production"
             },
             "development": {
-              "browserTarget": "TpCofreB:build:development"
+              "browserTarget": "ProjectoFinalJC:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -72,7 +75,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "TpCofreB:build"
+            "browserTarget": "ProjectoFinalJC:build"
           }
         },
         "test": {
@@ -98,6 +101,6 @@
     }
   },
   "cli": {
-    "analytics": "736e07f6-a793-43a9-9db5-42de71652fa6"
+    "analytics": "1be350e3-5916-4000-b925-ef279217674c"
   }
 }

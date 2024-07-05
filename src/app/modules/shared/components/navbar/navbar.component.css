@@ -1,28 +1,38 @@
 .example-spacer {
     flex: 1 1 auto;
   }
-  
+
+  .imgLogo{
+    width: 40%;
+    height: auto;
+  }
+
+
   /* Declaramos con palabra reservada MEDIA -> DISPOSITIVOS PEQUEÑOS (ej: celulares) */
   @media (min-width: 300px) and (max-width: 700px) {
     mat-toolbar{
-      background-color: purple;
-    }
-
-    #menuInicio {
-      display: none;
+      background-color: #FFF;
     }
 
     #menuProducto{
       display: none;
     }
+
+    #imgLogo{
+      padding: 0px;
+      width: 100%;
+      height: auto;
+    }
+
   }
 
   @media (min-width: 700px){
     mat-toolbar{
-      background-color: blue;
+      background-color: #FFF;
     }
-    
-    #menuSecciones{
+
+    #menuProducto{
       display: none;
     }
+
   }

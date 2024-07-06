@@ -9,6 +9,7 @@ const routes: Routes = [
 path:'',
 component:InicioComponent
 },
+
 //ruta perezosa -> 1 modulo
 //loadChildren: indica una ruta hija
 //()=>import: ruta en donde viene el modulo

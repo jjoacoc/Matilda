@@ -5,6 +5,8 @@ import { InicioRoutingModule } from './inicio-routing.module';
 
 //INICIO - PAGINA INTERFAZ DEL USUARIO
 import { InicioComponent } from './pages/inicio/inicio.component';
+import { DivisorComponent } from './components/divisor/divisor.component';
+
 
 //COMPONENTES LOCALES
 import { CardComponent } from './components/card/card.component';
@@ -17,13 +19,15 @@ import {MatButtonModule} from '@angular/material/button';
 @NgModule({
   declarations: [
     InicioComponent,
-    CardComponent
+    CardComponent,
+    DivisorComponent
   ],
   imports: [
     CommonModule,
     InicioRoutingModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    DivisorComponent
   ],
   exports: [
     MatButtonModule,

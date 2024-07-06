@@ -4,9 +4,11 @@
 
   .imgLogo{
     width: 40%;
-    height: auto;
   }
 
+  #menuProducto{
+    display: none;
+  }
 
   /* Declaramos con palabra reservada MEDIA -> DISPOSITIVOS PEQUEÑOS (ej: celulares) */
   @media (min-width: 300px) and (max-width: 700px) {
@@ -14,13 +16,9 @@
       background-color: #FFF;
     }
 
-    #menuProducto{
-      display: none;
-    }
-
     #imgLogo{
       padding: 0px;
-      width: 100%;
+      width: 70%;
       height: auto;
     }
 
@@ -29,10 +27,6 @@
   @media (min-width: 700px){
     mat-toolbar{
       background-color: #FFF;
-    }
-
-    #menuProducto{
-      display: none;
     }
 
   }

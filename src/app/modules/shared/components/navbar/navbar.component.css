@@ -1,0 +1,32 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.imgLogo{
+  width: 40%;
+}
+
+#menuProducto{
+  display: none;
+}
+
+/* Declaramos con palabra reservada MEDIA -> DISPOSITIVOS PEQUEÑOS (ej: celulares) */
+@media (min-width: 300px) and (max-width: 700px) {
+  mat-toolbar{
+    background-color: #FFF;
+  }
+
+  #imgLogo{
+    padding: 0px;
+    width: 70%;
+    height: auto;
+  }
+
+}
+
+@media (min-width: 700px){
+  mat-toolbar{
+    background-color: #FFF;
+  }
+
+}

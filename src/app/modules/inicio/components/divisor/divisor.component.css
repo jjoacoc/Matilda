@@ -13,21 +13,18 @@
     flex-wrap: wrap;
     justify-content: space-between;
     margin: 20px auto;
-    /* Ajusta según sea necesario */
     padding: 0;
     box-sizing: border-box;
 }
 
 .divprin {
     flex: 1 1 20%;
-    /* Ajusta el tamaño de cada columna según sea necesario */
     padding: 1.8em 1em;
     background-color: rgb(230, 230, 230, 0.9);
     border-right: 1px solid black;
     text-align: center;
     box-sizing: border-box;
     margin-bottom: 20px;
-    /* Espacio entre cada fila */
 }
 
 .divprin:last-child {
@@ -42,4 +39,32 @@
 
 h4 {
     margin-top: 0.5em;
+}
+
+@media (max-width:700px) {
+    .container {
+        background-color: rgba(230, 230, 230, 0.9);
+        width: 100%;
+        display: block;
+        box-sizing: border-box;
+    }
+
+
+    .divprin {
+        flex: 1 1 20%;
+        background-color: rgb(230, 230, 230, 0.9);
+        font-size: 18px;
+        border-bottom: 1px solid black;
+        text-align: center;
+        box-sizing: border-box;
+        margin-bottom: 20px;
+    }
+
+    .divprin:last-child {
+        border-bottom: none;
+    }
+
+    h4{
+        font-size: 22px;
+    }
 }

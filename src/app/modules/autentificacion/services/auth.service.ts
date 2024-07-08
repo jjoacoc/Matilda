@@ -32,6 +32,7 @@ export class AuthService {
     //devolver promesa vacia
     return this.auth.signOut();
   }
+  
   //Funcion para tomar UID
   async obtenerUid(){
     //Nos va a generar una promesa, y la constante la va a capturar

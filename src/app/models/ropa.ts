@@ -1,6 +1,6 @@
 export interface Ropa {
     id: string;
-    nombre: string;
+    titulo: string;
     imagen: string;
     alt: string;
     parrafo: string;

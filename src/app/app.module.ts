@@ -10,9 +10,9 @@ import { SharedModule } from './modules/shared/shared.module';
 
 //vinculaciones / importaciones con firebase.
 import { environment } from 'src/environments/environment';
-import { AngularFireModule} from '@angular/fire/compat';
-import { AngularFireAuthModule} from '@angular/fire/compat/auth'; 
-import { AngularFireStorageModule} from '@angular/fire/compat/storage';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth'; 
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 
 @NgModule({
   declarations: [

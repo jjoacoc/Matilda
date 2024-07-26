@@ -1,0 +1,26 @@
+body, html{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.BgImg{
+    background-image: url('../../../../../assets/upscaled-4x-avc.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Mantiene la imagen fija en la ventana */
+    overflow: hidden;
+    height: 100vh;
+    position: relative;
+}
+
+
+
+.content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente sobre la imagen */
+}

@@ -5,6 +5,7 @@ import { AuthService } from '../../services/auth.service';
 //servicio de rutas que otorga angular
 import { Router } from '@angular/router';
 import { FirestoreService } from 'src/app/modules/shared/services/firestore.service';
+import Swal from 'sweetalert2';
 
 //paqueteria de criptacion
 import * as CryptoJS from 'crypto-js';
@@ -35,7 +36,7 @@ export class RegistroComponent {
     public servicioAuth: AuthService,
     public servicioRutas: Router,
     public servicioFirestore: FirestoreService
-  ) {}
+  ) { }
 
   //FUNCION PARA EL REGISTRO
   async registrar() {
@@ -48,31 +49,44 @@ export class RegistroComponent {
       .registrar(credenciales.email, credenciales.password)
       //el metodo then nos devuelve la respuesta esperada por la promesa
       .then((res) => {
-        alert('Ha agregado un usuario con exito ');
+        
+        Swal.fire({
+          title: "Buen Trabajo!",
+          text: "Te registraste con exito!",
+          icon: "success"
+        });
+
+
         //accedemos al servicio de turas -> metodo navigate
         //metodo navigate = permite dirigirnos a diferentes vistas
         this.servicioRutas.navigate(['/inicio']);
       })
 
       .catch((error) => {
-        alert('Hubo un problema al registrar un nuevo usuario :(');
+        
+        Swal.fire({
+          icon: "error",
+          title: "Oh no!",
+          text: "Hubo un problema al registrarte",
+        });
+
       });
 
-      const uid = await this.servicioAuth.obtenerUid();
+    const uid = await this.servicioAuth.obtenerUid();
 
-      this.usuarios.uid = uid
+    this.usuarios.uid = uid
 
-      // ENCRIPTACION DE LA CONTRASEÑA DE USUARIO
-      /*
-        * SHA-256: es un algoritmo de hashing seguro que toma una entrada (en este caso la
-        * contraseña) y produce una cadena de caracteres HEXADECIMAL que representa asu HASH
-        *
-        *  toString(): convierte el resultado del hash en una cadena de caracteres legible
-      */
+    // ENCRIPTACION DE LA CONTRASEÑA DE USUARIO
+    /*
+      * SHA-256: es un algoritmo de hashing seguro que toma una entrada (en este caso la
+      * contraseña) y produce una cadena de caracteres HEXADECIMAL que representa asu HASH
+      *
+      *  toString(): convierte el resultado del hash en una cadena de caracteres legible
+    */
 
-      this.usuarios.password = CryptoJS.SHA256(this.usuarios.password).toString();
+    this.usuarios.password = CryptoJS.SHA256(this.usuarios.password).toString();
 
-      this.guardarUsuario();
+    this.guardarUsuario();
     //llamamos a la funcion limpiarimputs() para que limpie los imputs
     this.limpiarInputs();
   }
@@ -80,12 +94,12 @@ export class RegistroComponent {
   //funcion para agregar NUEVO USUARIO
   async guardarUsuario() {
     this.servicioFirestore.agregarUsuario(this.usuarios, this.usuarios.uid)
-    .then(res => {
-      console.log(this.usuarios);
-    })
-    .catch(err => {
-      console.log('Error =>',err)
-    })
+      .then(res => {
+        console.log(this.usuarios);
+      })
+      .catch(err => {
+        console.log('Error =>', err)
+      })
   }
 
   limpiarInputs() {

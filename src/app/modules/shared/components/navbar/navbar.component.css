@@ -3,12 +3,19 @@
 }
 
 .imgLogo{
-  width: 40%;
-}
+  width: 35%;
+  padding: 50px;
+} 
 
 #menuProducto{
   display: none;
 }
+@media (min-width: 710px) and (max-width: 1000px) {
+  .imgLogo{
+    width: 45%;
+    padding: 0px;
+  }
+}   
 
 /* Declaramos con palabra reservada MEDIA -> DISPOSITIVOS PEQUEÑOS (ej: celulares) */
 @media (min-width: 300px) and (max-width: 700px) {
@@ -16,7 +23,7 @@
     background-color: #FFF;
   }
 
-  #imgLogo{
+  .imgLogo{
     padding: 0px;
     width: 60%;
     height: auto;

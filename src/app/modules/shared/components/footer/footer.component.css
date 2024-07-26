@@ -7,18 +7,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
 }
 
 .social-icons {
     display: flex;
     justify-content: space-around;
-    flex: 1; 
+    flex: 1;
 }
 
 .logo-container {
     flex: 1;
-    text-align: center; 
+    text-align: center;
 }
 
 .links {
@@ -29,7 +29,9 @@
 .lin {
     text-decoration: none;
     display: block;
-    padding: 5px;
+    font-size: 20px;
+    padding: 20px;
+    padding-right: 35%;
 }
 
 .icon-container {
@@ -43,10 +45,10 @@
     height: 100%;
 }
 
-@media (max-width: 860px) {
+@media (min-width: 485px) and (max-width: 860px) {
     .footer {
-        flex-direction: column; 
-        text-align: center; 
+        flex-direction: column;
+        text-align: center;
     }
 
     .social-icons {
@@ -59,27 +61,39 @@
     }
 
     .links {
+        display: flex;
         text-align: center;
         font-size: 23px;
     }
-    .icon-container{
-        margin: 30px;
-        }
+
+    .icon-container {
+        margin: 60px;
+        max-width: 100%;
+    }
 }
 
-@media (max-width: 480px) {
+@media (min-width:320px) and (max-width: 480px) {
 
-    .imgLogo{
+    .footer{
+        display: block;
+    }
+
+    .imgLogo {
         width: 100%;
     }
 
     .icon-container {
-        width: 30px;
-        height: 30px;
+        margin: 25px;
+        width: 100%;
     }
 
     .lin {
+        display: inline-flex;
         padding: 10px;
         font-size: 23px;
+    }
+
+    .links{
+        text-align: center;
     }
 }

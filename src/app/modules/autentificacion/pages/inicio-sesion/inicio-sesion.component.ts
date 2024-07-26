@@ -4,6 +4,7 @@ import { AuthService } from '../../services/auth.service';
 import { FirestoreService } from 'src/app/modules/shared/services/firestore.service';
 import { Router } from '@angular/router';
 import * as CryptoJS from 'crypto-js';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-inicio-sesion',
@@ -53,7 +54,7 @@ export class InicioSesionComponent {
     public servicioAuth: AuthService,
     public servicioFirestore: FirestoreService,
     public servicioRutas: Router
-  ) {}
+  ) { }
 
   usuarios: Usuario = {
     uid: '',
@@ -95,13 +96,19 @@ export class InicioSesionComponent {
       password: this.usuarios.password,
     };
 
-    try{
+    try {
       const usuarioBD = await this.servicioAuth.obtenerUsuario(credenciales.email);
 
       // ! -> si es diferente
       // .empty -> metodo de firebase para marcar si algo es vacio
-      if(!usuarioBD || usuarioBD.empty){
-        alert('El correo electronico no esta registrado');
+      if (!usuarioBD || usuarioBD.empty) {
+
+        Swal.fire({
+          title: "Oh No!",
+          text: "Ese Correo no esta Registrado!",
+          icon: "error"
+        });
+
         this.limpiarInputs();
         return;
       }
@@ -118,27 +125,44 @@ export class InicioSesionComponent {
       // Hash de la contraseña ingresada por el usuario
       const hashedPassword = CryptoJS.SHA256(credenciales.password).toString();
 
-      if(hashedPassword !== usuarioData.password){
-        alert('Contraseña incorrecta');
-        
+      if (hashedPassword !== usuarioData.password) {
+
+        Swal.fire({
+          title: "Oh No!",
+          text: "Contraseña Incorrecta!",
+          icon: "error"
+        });
+
         this.usuarios.password = '';
         return;
       }
 
       const res = await this.servicioAuth
-      .iniciarSesion(credenciales.email, credenciales.password)
-      .then((res) => {
-        alert('Se ha logeado con exito');
-        this.servicioRutas.navigate(['/inicio']);
-      })
-      .catch((err) => {
-        alert('Hubo un problema al iniciar sesion' + err);
-        this.limpiarInputs();
-      });
-    }catch(error){
+        .iniciarSesion(credenciales.email, credenciales.password)
+        .then((res) => {
+
+          Swal.fire({
+            title: "Buen Trabajo!",
+            text: "Se ha Logeado con Exito!",
+            icon: "success"
+          });
+
+          this.servicioRutas.navigate(['/inicio']);
+        })
+        .catch((err) => {
+
+          Swal.fire({
+            title: "Oh No!",
+            text: "Ha Ocurrido un Error al Inicar Sesion!",
+            icon: "error"
+          });
+
+          this.limpiarInputs();
+        });
+    } catch (error) {
       this.limpiarInputs();
     }
-}
+  }
 
   limpiarInputs() {
     const inputs = {
@@ -147,5 +171,5 @@ export class InicioSesionComponent {
     };
   }
 }
-  //############################################FIN INICIO DE SESION#####################################################
+//############################################FIN INICIO DE SESION#####################################################
 

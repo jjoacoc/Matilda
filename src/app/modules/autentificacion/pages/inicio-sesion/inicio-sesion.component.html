@@ -4,15 +4,15 @@
 
     <!-- Email del usuario -->
     <mat-form-field appearance="fill">
-      <mat-label>Ingrese Email del usuario</mat-label>
+      <mat-label>Ingrese su Email</mat-label>
       <!-- ngModel nos conecta de manera bidireccional como un formulario-->
-      <input [(ngModel)]="usuarios.email" matInput placeholder="Placeholder" required>
+      <input [(ngModel)]="usuarios.email" matInput required>
     </mat-form-field>
 
 
     <!-- Contraseña del usuario -->
     <mat-form-field>
-      <mat-label>Enter your password</mat-label>
+      <mat-label>Ingresa tu Contraseña</mat-label>
       <input [(ngModel)]="usuarios.password" matInput [type]="hide ? 'password' : 'text'" #input minlength="6" required>
       <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
         [attr.aria-pressed]="hide">

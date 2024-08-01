@@ -5,7 +5,7 @@ body, html{
 }
 
 .BgImg{
-    background-image: url('../../../../../assets/upscaled-4x-avc.jpg');
+    background-image: url('../../../../../assets/Fondo1r.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* Mantiene la imagen fija en la ventana */
@@ -22,5 +22,5 @@ body, html{
     color: white;
     text-align: center;
     padding: 20px;
-    background: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente sobre la imagen */
+    background: rgba(0, 0, 0, 0.1); /* Fondo semi-transparente sobre la imagen */
 }

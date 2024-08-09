@@ -7,6 +7,7 @@ import { PantalonesComponent } from './pages/pantalones/pantalones.component';
 import { RemerasComponent } from './pages/remeras/remeras.component';
 import { VestidosComponent } from './pages/vestidos/vestidos.component';
 import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -18,14 +19,16 @@ import { MatIconModule } from '@angular/material/icon';
   imports: [
     CommonModule,
     ProductoRoutingModule,
-    MatIconModule
+    MatIconModule,
+    MatCardModule
   ],
   exports: [
     AbrigosComponent,
     PantalonesComponent,
     RemerasComponent,
     VestidosComponent,
-    MatIconModule
+    MatIconModule,
+    MatCardModule
   ]
 })
 export class ProductoModule { }

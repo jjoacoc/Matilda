@@ -1,38 +1,17 @@
-<!-- <div class="BgImg"></div>
-    <div class="Dpcontent">
-        <div class="divimg" *ngFor="let i of abrigos">
-            <a routerLink="/inicio">
-                <img class="cardimg" src="{{i.imagen}}" alt="{{i.alt}}">
-            </a>
-            <div class="card-actions">
-
-                 <button class="btn-card">
-                    <h1>{{i.titulo}}</h1>
-                    <mat-icon class="icon-right">trending_flat</mat-icon>
-                </button> 
-
-            </div>
-        </div>
-    </div> -->
-<!-- 
-    <div id="wrapper">
+<div class="image-container" id="bg-image"></div>
 
 
-        <section id="bloque1">
-            <h1>Efecto parallax con CSS3</h1>
-    
-        </section>
+<article *ngFor="let c of abrigos">
+    <mat-card class="card" appearance="outlined">
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+            <p>
+                {{c.parrafo}}
+            </p>
+        </mat-card-content>
+    </mat-card>
+</article>
 
-        <section id="bloque2">
-
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-        </section>
-
-    </div> -->
-
-
-<div class="parallax"></div>
 <div class="content">
-    <div class="card">Card</div>
+    <p></p>
 </div>

@@ -56,7 +56,6 @@ export class RegistroComponent {
           icon: "success"
         });
 
-
         //accedemos al servicio de turas -> metodo navigate
         //metodo navigate = permite dirigirnos a diferentes vistas
         this.servicioRutas.navigate(['/inicio']);

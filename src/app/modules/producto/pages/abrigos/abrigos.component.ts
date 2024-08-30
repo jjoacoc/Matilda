@@ -19,7 +19,7 @@ export class AbrigosComponent {
         titulo: "Remeras",
         imagen: "../../../../../assets/img1.jpg",
         alt: "Imagen de Remeras",
-        parrafo: ""
+        parrafo: "1234"
       },
       {
 
@@ -43,7 +43,7 @@ export class AbrigosComponent {
         titulo: "Buzos",
         imagen: "../../../../../assets/img4.jpg",
         alt: "Imagen de Buzos",
-        parrafo: ""
+        parrafo: "3131"
 
       }
     ]

@@ -1,14 +1,13 @@
-<div class="divprin">
-
-    <div class="divimg" *ngFor="let i of info">
-        <a routerLink="/inicio">
-            <img class="cardimg" src="{{i.imagen}}" alt="{{i.alt}}">
-        </a>
-        <div class="card-actions">
-            <button class="btn-card">
-                <h1>{{i.titulo}}</h1>
-                <mat-icon class="icon-right">trending_flat</mat-icon>
-            </button>
-        </div>
-    </div>
-</div>
+<article class="divprin">
+  <mat-card class="divimg" *ngFor="let i of info">
+    <a routerLink="/inicio">
+      <img class="cardimg" src="{{ i.imagen }}" alt="{{ i.alt }}" />
+    </a>
+    <mat-card-content class="card-actions">
+      <button class="btn-card">
+        <h1>{{ i.titulo }}</h1>
+        <mat-icon class="icon-right">trending_flat</mat-icon>
+      </button>
+    </mat-card-content>
+  </mat-card>
+</article>

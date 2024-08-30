@@ -1,0 +1,13 @@
+INDICE
+1) Indice
+2) Participantes del proyecto
+3)Introduccion
+4)Descripcion del sistema actual
+5)Pre Analisis
+5.1)Herramientas utilizadas
+6)Analisis
+6.1)F O D A
+6.2)Analisis de requerimientos
+6.2.1)Funcionales
+6.2.2)No Funcionales
+6.3)Casos de uso

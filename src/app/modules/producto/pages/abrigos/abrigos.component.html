@@ -1,17 +1,31 @@
 <div class="image-container" id="bg-image"></div>
 
-
-<article *ngFor="let c of abrigos">
+<!-- <article *ngFor="let c of abrigos">
     <mat-card class="card" appearance="outlined">
-        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> 
         <mat-card-content>
             <p>
-                {{c.parrafo}}
+                 {{c.parrafo}} 
             </p>
         </mat-card-content>
     </mat-card>
-</article>
+</article> -->
+  <ol class="container">
+    <mat-card class="card-grid" *ngFor="let c of abrigos">
+      <li>
+        <img
+          mat-card-image
+          src="{{ c.imagen }}"
+          class="card-image"
+          alt="{{ c.alt }}"
+        />
+        <mat-card-content class="heading"
+          ><p>{{ c.parrafo }}</p>
+        </mat-card-content>
+      </li>
+    </mat-card>
+  </ol>
 
 <div class="content">
-    <p></p>
+  <p></p>
 </div>
